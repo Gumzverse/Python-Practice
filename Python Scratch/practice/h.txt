@@ -1,0 +1,4 @@
+Apple, 50
+Banana, 30
+Cherry, 20
+Grape, 40

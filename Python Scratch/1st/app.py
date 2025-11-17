@@ -1,0 +1,8 @@
+print("---------------------")
+print("Hello World")
+print("---------------------")
+print("Ian Gamez")
+print("---------------------")
+birth_year = input("Enter Birth Year: " )
+age = 2024 - int(birth_year)
+print(age)
