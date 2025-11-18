@@ -1,15 +1,14 @@
-#num_1= int(input('Number Here: '))
-#num_2= int(input('Number again Here: '))
-#res = num_1 * num_2
-#print('The Answer is ', res)
+num_1= int(input('Number Here: '))
+num_2= int(input('Number again Here: '))
+res = num_1 * num_2
+print('The Answer is ', res)
 
 
-#num = 8
-#print('%o' % num)
+num = 8
+print('%o' % num)
 
-
-#num = 458.541315
-#print  ('%.2f' % num)
+num = 458.541315
+print  ('%.2f' % num)
 
 
 print("*****Circle*****")
