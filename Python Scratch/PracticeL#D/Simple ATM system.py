@@ -1,38 +1,49 @@
-pin = 1234
-pen = int(input("               \033[92mEnter PIN: \033[m"))
-balance = 1000
-while True:
-    if pen != pin:
-        print("Kabaw")
-        break
+def atm_password(password):
+    pas = int(input('Enter password: '))
+    if pas == password:
+        print('Password Validated Successfully.')
+        return True
     else:
-        print('             \033[92m\033[1m---------Access Granted---------\033[0m')
+        print('Invalid Password.')
+        return False
 
-    print('''                      ----------Menu---------
-                    [1] Deposit
-                    [2] Withdraw
-                    [3] Inquire''')
-    menu = str(input('              Select Menu: '))
-    if menu in '1':
-        depo = float(input('             Enter Amount: '))
-        new_bal = balance + depo
-        print(f"             \033[92m\033[1mDeposit Successful! Your new balance is {new_bal}\033[0m")
-        break
-    elif menu in '2':
-        wit = float(input("               Enter Amount: "))
-        if wit > balance:
-            print()
-            print(f'''               Withdraw Unsuccessful
-                `Only Balance Left: {balance}''')
+def deposit(balance):
+    dp = int(input('Enter amount: '))
+    balance += dp
+    print(f'Transaction successful.\nAmount Deposited: {dp}\nBalance: {balance}')
+    return balance
+
+def withdraw(balance):
+    wd = int(input('Enter amount: '))
+    if wd > balance:
+        print('Insufficient Balance.')
+    else:
+        balance -= wd
+        print(f'Transaction successful.\nAmount Withdrawn: {wd}\nBalance: {balance}')
+    return balance
+
+def inquire(balance):
+    print(f'Your Balance is: {balance}')
+    return balance
+
+def menu():
+    balance = 10000
+    password = 1234
+    if not atm_password(password):
+        return
+    while True:
+        print('\n[1] Deposit\n[2] Withdraw\n[3] Inquire\n[4] Exit')
+        option = input('Enter option: ')
+        if option == "1":
+            balance = deposit(balance)
+        elif option == "2":
+            balance = withdraw(balance)
+        elif option == "3":
+            inquire(balance)
+        elif option == "4":
+            print('Thank you for using the ATM!')
             break
         else:
-                new_bal = balance - wit
-                print(f"             \033[92m\033[1mWithdraw Successful! Your new balance is {new_bal}\033[0m")
-                break
-    elif menu in '3':
-        print(f"                \033[92mYour Balance is {balance}\033[m")
-        break
-    else:
-        print("           \033[91m\033[1mYour Selected Option is not Supported")
-        break
+            print('Invalid option. Please try again.')
 
+menu()
