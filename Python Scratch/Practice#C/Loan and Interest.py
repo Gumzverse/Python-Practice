@@ -1,4 +1,4 @@
-LA = int(input('Enter Loan Amount: '))R
+LA = int(input('Enter Loan Amount: '))
 AI = int(input('Enter Annual Interest Rate (in percentage): '))
 MA = int(input('Enter Monthly Payment Amount: '))
 
